@@ -1,0 +1,33 @@
+div.bar {
+    width: 20px;
+    height: 75px;   /*overriden by d3js */
+    background-color: green;
+    margin-right: 2px;
+    position: relative;
+    left: 1%;
+    display: inline-block;
+    top: 20px;
+}
+div.draw{
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 95%;
+	margin-top: 50px;
+}
+svg{
+	width: 100%;
+	margin-left: 20px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 8px;
+}

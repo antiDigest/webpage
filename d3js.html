@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
+	<meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/global.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/chat.css">
+	<link rel="stylesheet" href="css/d3js.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<script src="https://use.fontawesome.com/5239e29d17.js"></script>
+	<script src="js/index.js"></script>
+	<script src="d3/d3.js"></script>
+	<script src="http://d3js.org/d3.v4.min.js"></script>
+	<title>Antriksh Agarwal - University of Texas, Dallas</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li id="home-link" class="active"><a href="/">Home</a></li>
+					<!-- <li id="about-link"><a href="#">About</a></li>
+					<li id="projects-link"><a href="#">Projects</a></li>
+					<li id="contact-link"><a href="#">Contact</a></li> -->
+				</ul>
+				<!-- <ul class="nav navbar-nav navbar-right">
+					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				</ul> -->
+			</div>
+		</div>
+	</nav>
+	<div class="draw"></div>
+
+	<script type="text/javascript">
+
+			var dataset = [];
+			var words = []
+			
+			d3.csv("trump.csv", function(data) {
+				data.forEach(function(d){
+					d.count= +d.count;
+				});
+				for(var i=0;i<30;i++){
+					var newNumber = data[i].count;
+					// console.log(data[i].count);
+					dataset.push(newNumber);
+					words.push({"word":data[i].word, "count":data[i].count})
+				}
+			  	var width=$("div.draw").width()-20;
+				var height=300;
+				var padding =2;
+
+				var maxValue = Math.max.apply(Math, dataset);
+				var minValue = Math.min.apply(Math, dataset);
+
+				console.log(minValue);
+
+				// var yScale = d3.scaleLinear().range([height-maxValue*4, height-5]).domain([maxValue, minValue]);
+				// var xScale = d3.scaleLinear().range([2, width-2]).domain([minValue,maxValue]);
+
+
+
+				var svg = d3.select("body").select("div.draw").append("svg")
+							.attr("height", height);
+
+				// var yAxis = d3.axisRight()
+	   //                .scale(yScale)
+	   //                .ticks(7);
+
+	   //          svg.append('g')
+	   //          	.attr('class','axis')
+	   //          	.call(yAxis);
+
+				// var rect = svg.selectAll("rect")
+				//    .data(dataset)
+				//    .enter()
+				//    .append("rect")
+				//    .attr("x", function(d,i){
+				//    	return (i* (width / dataset.length) + 20);
+				//    })
+				//    .attr("y", function(d) {
+				//    	return height-5 - (d*4);
+				//    })
+				//    .attr("width", function(d,i){
+				//    	return ((width / dataset.length) - padding);
+				//    })
+				//    .attr("height", function(d) {
+				//    	return (d*4);
+				//    });
+
+				// rect.attr("fill",function(d) {
+				// 	    return "rgb("+ (d * 4) +"," + (d*5) + ", " + (d * 6) + ")";
+				// 	})
+				// 	.attr("opacity",function(d) {
+				// 	    return d/31;
+				// 	});
+
+				// var text = svg.selectAll("text")
+				// 	   .data(words)
+				// 	   .enter()
+				// 	   .append("text");
+
+				// text.text(function(d) {
+				//         return d.word;
+				//    }).attr("x", function(d, i) {
+				//         return i * (width / words.length)+ (width / words.length)/2 - 5*padding + 20;
+				//    })
+				//    .attr("y", function(d) {
+				//    		if(d.count<=5) return height-5 - (d.count*4);
+				//         return height-5 - (d.count*4)+13;
+				//    }).attr("font-family", "sans-serif")
+				//    .attr("font-size", "11px")
+				//    .attr("fill", "black");	
+
+				
+			});
+		
+    </script>
+
+</body>

@@ -1,0 +1,88 @@
+h2{
+	color: #787878;
+	font-weight: 400;
+    font-family:sans-serif;
+}
+
+#profile-pic{
+	height: 275px;
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 25px;
+}
+
+#contact-info ul{
+	font-size: 15px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#contact-info h4{
+	text-align: center;
+	display: inline;
+}
+
+.highlight {
+	background-color: red;
+}
+
+.contact-info-type{
+	font-weight: bold;
+}
+
+.social a{
+	margin-right: 2px;
+}
+
+.fa{
+	color: grey;
+	display: block;
+}
+
+.fa-facebook-official:hover{
+	color: #4867AA;
+}
+
+.fa-google-plus-official:hover{
+	color: #DC4E41;
+}
+
+.fa-linkedin:hover{
+	color: #1D87BE;
+}
+
+.fa-quora{
+	font-family: Arial; /* your font family here! */
+    font-weight: bolder;	
+}
+
+.fa-quora:hover{
+	color: #B92B27;
+}
+
+#publication-section, #project-section{
+	float: left;
+	clear: both;
+	margin-top: 20px;
+	font-size: 12px;
+}
+
+/*.glyphicon:hover{
+	display: block;
+}*/
+
+#project-section{
+	display: none;
+}
+
+#about-section{
+	min-height: 275px;
+	height:100%;
+	font-style: inherit;
+    font: message-box;
+    text-align: justify;
+}
+
