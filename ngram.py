@@ -7,12 +7,27 @@ import pandas as pd
 
 
 def routine():
-    for file in glob('speeches/*.txt'):
+    vocab = {}
+    pres = []
+    for file in glob('speech/speeches/*.txt'):
         fopen = open(file, 'r')
-        print file
-        text = fopen.read().split(' ')
-        print json.dumps(Counter(text), indent=4, separators=(',', ': '))
-        break
+        address = fopen.readline()
+        name = fopen.readline().split('\n')[0]
+        print name
+        text = re.split(r'[\n*\s\b\'\.\,\\\/\?\"\[\]\-\u\()\_]',
+                        fopen.read().lower())
+        text = list(set(text))
+        if name in pres:
+            vocab[name] += len(text)
+        else:
+            vocab[name] = len(text)
+            pres.append(name)
+
+    data = {k: v for k, v in vocab.items()}
+    data = sorted(data.items(), key=lambda i: i[1], reverse=True)
+    df = pd.DataFrame.from_dict(data)
+    df.to_csv('vocab.csv', index=False, header=['id', 'value'])
+    # print json.dumps(Counter(text), indent=4, separators=(',', ': '))
 
 
 def trump():
@@ -38,3 +53,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if trump:
         trump()
+
+    # if not trump:
+    routine()

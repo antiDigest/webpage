@@ -20,6 +20,15 @@
 </head>
 
 <body>
+
+<style>
+
+text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+</style>
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -63,20 +72,16 @@
 			    .size([width, width])
 			    .padding(1.5);
 			
-			d3.csv("trump.csv", function(d) {
-					d.count = +d.count;
+			d3.csv("vocab.csv", function(d) {
+					d.value = +d.value;
 					// console.log(d.count, d.word);
-					if (d.count) return d;
+					if (d.value) return d;
 				}, function(error, classes) {
 				  if (error) throw error;
 
 				var root = d3.hierarchy({children: classes})
-			      .sum(function(d, i) { 
-			      	console.log(d.word);
-			      	if(typeof d.word == undefined){
-		      			console.log(i);
-		      		}
-			      	return d.word, d.count; })
+			      .sum(function(d) {
+			      	return d.value; })
 			      .each(function(d) {
 			        if (id = d.data.id) {
 			          var id, i = id.lastIndexOf(id);
@@ -102,14 +107,15 @@
 			    .append("use")
 			      .attr("xlink:href", function(d) { return "#" + d.id; });
 
-			  node.append("text")
-			      .attr("clip-path", function(d) { return "url(#clip-" + d.value + ")"; })
-			    .selectAll("tspan")
-			    .data(function(d) { return d.word; })
-			    .enter().append("tspan")
-			      .attr("x", 0)
-			      .attr("y", function(d, i) { return 13 + (i - 0.5) * 10; })
-			      .text(function(d) { return d; });
+			  node.selectAll("text")
+					.data(function(d) {
+						return d.id.split(); })
+					.enter().append("text")
+					.attr("x", 0)
+					.attr("y", function(d, i, nodes) { return 13 + (i - nodes.length/2 - 0.5) * 10; })
+					.text(function(d) { 
+						return d;
+					});
 
 			  node.append("title")
 			      .text(function(d) { return d.id + "\n" + format(d.value); });
@@ -118,3 +124,20 @@
     </script>
 
 </body>
+
+		<footer class="footer">
+			<div class="container">
+				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
+				<!-- <p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img id="css-validator"
+						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+						alt="Valid CSS!" />
+					</a>
+				</p> -->
+			</div>
+		</footer>
+
+	</body>
+
+	</html>
