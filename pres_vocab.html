@@ -72,7 +72,7 @@ text {
 			    .size([width, width])
 			    .padding(1.5);
 			
-			d3.csv("vocab.csv", function(d) {
+			d3.csv("data/vocab.csv", function(d) {
 					d.value = +d.value;
 					// console.log(d.count, d.word);
 					if (d.value) return d;
