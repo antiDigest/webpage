@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,90 +43,76 @@
 			</div>
 		</div>
 	</nav>
-	<div class="draw"></div>
-
-	<script type="text/javascript">
-
-			var dataset = [];
-			var words = []
+	<svg width="1000" height="1200"></svg>
 			
-			d3.csv("trump.csv", function(data) {
-				data.forEach(function(d){
-					d.count= +d.count;
-				});
-				for(var i=0;i<30;i++){
-					var newNumber = data[i].count;
-					// console.log(data[i].count);
-					dataset.push(newNumber);
-					words.push({"word":data[i].word, "count":data[i].count})
-				}
-			  	var width=$("div.draw").width()-20;
-				var height=300;
-				var padding =2;
+	<script type="text/javascript ">
 
-				var maxValue = Math.max.apply(Math, dataset);
-				var minValue = Math.min.apply(Math, dataset);
+			// var dataset = [];
+			// var words = []
+			// var width=$("div.draw").width()-20;
+			// var height=1200;
+			// var padding =2;
+			var svg = d3.select("svg"),
+			    width = +svg.attr("width");
 
-				console.log(minValue);
+			var format = d3.format(",d");
 
-				// var yScale = d3.scaleLinear().range([height-maxValue*4, height-5]).domain([maxValue, minValue]);
-				// var xScale = d3.scaleLinear().range([2, width-2]).domain([minValue,maxValue]);
+			var color = d3.scaleOrdinal(d3.schemeCategory20c);
 
+			var pack = d3.pack()
+			    .size([width, width])
+			    .padding(1.5);
+			
+			d3.csv("trump.csv", function(d) {
+					d.count = +d.count;
+					// console.log(d.count, d.word);
+					if (d.count) return d;
+				}, function(error, classes) {
+				  if (error) throw error;
 
+				var root = d3.hierarchy({children: classes})
+			      .sum(function(d, i) { 
+			      	console.log(d.word);
+			      	if(typeof d.word == undefined){
+		      			console.log(i);
+		      		}
+			      	return d.word, d.count; })
+			      .each(function(d) {
+			        if (id = d.data.id) {
+			          var id, i = id.lastIndexOf(id);
+			          d.id = id;
+			          d.package = id.slice(0, i);
+			          d.class = id.slice(0);
+			        }
+			      });
 
-				var svg = d3.select("body").select("div.draw").append("svg")
-							.attr("height", height);
+			  var node = svg.selectAll(".node")
+			    .data(pack(root).leaves())
+			    .enter().append("g")
+			      .attr("class", "node")
+			      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-				// var yAxis = d3.axisRight()
-	   //                .scale(yScale)
-	   //                .ticks(7);
+			  node.append("circle")
+			      .attr("id", function(d) { return d.id; })
+			      .attr("r", function(d) { return d.r; })
+			      .style("fill", function(d) { return color(d.package); });
 
-	   //          svg.append('g')
-	   //          	.attr('class','axis')
-	   //          	.call(yAxis);
+			  node.append("clipPath")
+			      .attr("id", function(d) { return "clip-" + d.id; })
+			    .append("use")
+			      .attr("xlink:href", function(d) { return "#" + d.id; });
 
-				// var rect = svg.selectAll("rect")
-				//    .data(dataset)
-				//    .enter()
-				//    .append("rect")
-				//    .attr("x", function(d,i){
-				//    	return (i* (width / dataset.length) + 20);
-				//    })
-				//    .attr("y", function(d) {
-				//    	return height-5 - (d*4);
-				//    })
-				//    .attr("width", function(d,i){
-				//    	return ((width / dataset.length) - padding);
-				//    })
-				//    .attr("height", function(d) {
-				//    	return (d*4);
-				//    });
+			  node.append("text")
+			      .attr("clip-path", function(d) { return "url(#clip-" + d.value + ")"; })
+			    .selectAll("tspan")
+			    .data(function(d) { return d.word; })
+			    .enter().append("tspan")
+			      .attr("x", 0)
+			      .attr("y", function(d, i) { return 13 + (i - 0.5) * 10; })
+			      .text(function(d) { return d; });
 
-				// rect.attr("fill",function(d) {
-				// 	    return "rgb("+ (d * 4) +"," + (d*5) + ", " + (d * 6) + ")";
-				// 	})
-				// 	.attr("opacity",function(d) {
-				// 	    return d/31;
-				// 	});
-
-				// var text = svg.selectAll("text")
-				// 	   .data(words)
-				// 	   .enter()
-				// 	   .append("text");
-
-				// text.text(function(d) {
-				//         return d.word;
-				//    }).attr("x", function(d, i) {
-				//         return i * (width / words.length)+ (width / words.length)/2 - 5*padding + 20;
-				//    })
-				//    .attr("y", function(d) {
-				//    		if(d.count<=5) return height-5 - (d.count*4);
-				//         return height-5 - (d.count*4)+13;
-				//    }).attr("font-family", "sans-serif")
-				//    .attr("font-size", "11px")
-				//    .attr("fill", "black");	
-
-				
+			  node.append("title")
+			      .text(function(d) { return d.id + "\n" + format(d.value); });
 			});
 		
     </script>
