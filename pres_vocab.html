@@ -6,8 +6,7 @@
 	<meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
 	<meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/index.css">
+	
 	<link rel="stylesheet" href="css/chat.css">
 	<link rel="stylesheet" href="css/d3js.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -23,10 +22,7 @@
 
 <style>
 
-text {
-  font: 10px sans-serif;
-  text-anchor: middle;
-}
+
 
 </style>
 	<nav class="navbar navbar-inverse">
@@ -139,5 +135,31 @@ text {
 		</footer>
 
 	</body>
+	<script type="text/javascript">
+
+		function getRandomArbitrary() {
+		    return Math.random() * (1000) + 1;
+		}
+		
+		var css = ['global.css','index.css']
+		// for(i=0;i<list.length;i++){
+		d3.select("head").data(css)
+			.enter().append('link')
+			.attr('rel', 'stylesheet')
+			.attr('href',function(d){
+				name = "css/"+d+"?v="+getRandomArbitrary();
+				return name;
+			});
+
+		var js = ['index.js']
+		// for(i=0;i<list.length;i++){
+		d3.select("head").data(js)
+			.enter().append('script')
+			.attr('src',function(d){
+				name = "js/"+d+"?v="+getRandomArbitrary();
+				return name;
+			});
+		// }
+	</script>
 
 	</html>

@@ -1,16 +1,20 @@
-html,body{
-	height: 92%;
+html, body{
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+    color: #444;
 }
 
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
 	color: #766A62;
+	/*position: fixed;*/
 }
 
 #utd-logo{
-	max-width:100px; 
+	max-width:30px; 
 	margin-top: -7px;
+	/*width:;*/
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */

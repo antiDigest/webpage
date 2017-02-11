@@ -5,11 +5,15 @@ h2{
 }
 
 #profile-pic{
-	height: 275px;
-	width: 200px;
-	float: left;
-	margin-right: 10px;
-	margin-top: 25px;
+	height: 200px;
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 25px;
+    border-color: black;
+    border-width: 2px;
+    border: solid;
+    margin-left: 25%;
 }
 
 #contact-info ul{
@@ -86,3 +90,49 @@ h2{
     text-align: justify;
 }
 
+.header-dark {
+    color: rgba(255,255,255,0.75);
+    background-color: #1e2327;
+}
+.img-circle {
+	height:100px;
+	width: 100px;
+    border-radius: 50%;
+}
+
+#htname{
+	display: block;
+	font-family: 'Roboto', sans-serif;
+    padding: 5px 8px;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 50px;
+    margin-top: 25px;
+}
+#timeline {
+    font-size: 20px;
+    font-weight: 300;
+}
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+}
+
+@media (min-width: 768px)
+.timelineitem:nth-child(odd) {
+    margin-left: 50%;
+    border-left: 5px solid #333;
+    text-align: left;
+}
+@media (min-width: 768px)
+.timelineitem {
+    width: 50%;
+    position: relative;
+    padding: 0px 10px 0px 10px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
