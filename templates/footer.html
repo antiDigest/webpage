@@ -1,0 +1,30 @@
+
+		<script type="text/javascript">
+		    $(document).ready(function () 
+		    {
+		        $.get("./projects", function(data) 
+		        {
+		        	console.log(data);
+		            $("#projects").append(data);
+		        });
+		    })
+		</script>
+
+
+	<div id="footer"><div style="height: 20px; overflow: hidden; width: 100%;"></div>
+		<hr class="styled-hr" style="width:100%;">
+		<div style="height: 20px; overflow: hidden; width: 100%;"></div>
+
+		<footer class="footer" style="height:45px; position:fixed">
+			<div class="container">
+				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
+				<!-- <p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img id="css-validator"
+						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+						alt="Valid CSS!" />
+					</a>
+				</p> -->
+			</div>
+		</footer>
+		</div>

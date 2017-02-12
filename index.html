@@ -9,225 +9,16 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
 	<script src="https://use.fontawesome.com/5239e29d17.js"></script>
 	<script src="js/index.js"></script>
 	<script src="d3/d3.js"></script>
-	<script src="http://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<title>Antriksh Agarwal - University of Texas, Dallas</title>
-</head>
-
-<body>
-
-	<nav class="navbar navbar-inverse">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png"></a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li id="home-link" class="active"><a href="/">Home</a></li>
-					<li id="about-link"><a href="#">Chat With Me</a></li>
-					<!-- <li id="projects-link"><a href="#">Projects</a></li>
-					<li id="contact-link"><a href="#">Contact</a></li> -->
-				</ul>
-				<!-- <ul class="nav navbar-nav navbar-right">
-					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</ul> -->
-			</div>
-		</div>
-	</nav>
-	
-	<div class="container-fluid text-center">
-		<div class="row content">
-		<div class="col-lg-1"></div>
-			
-			<!-- <div class="col-md-2 sidenav social">
-				<a href="https://www.linkedin.com/in/AntrikshAgarwal" target="_blank">
-					<i class="fa fa-linkedin  fa-3x" aria-hidden="true"></i>
-				</a>
-				<a href="">
-					<i class="fa fa-google-plus-official  fa-3x" aria-hidden="true"></i>
-				</a>
-				<a href="https://www.quora.com/profile/Antriksh-Agarwal" target="_blank">
-					<i class="fa fa-quora fa-3x" aria-hidden="true">Q</i>
-				</a>
-				<a href="https://www.facebook.com/AntrikshAgarwal" target="_blank">
-					<i class="fa fa-facebook-official  fa-3x" aria-hidden="true"></i>
-				</a>
-			</div> -->
-
-			<div id="about-section" class="col-lg-10 text-left" style="text-align:justify">
-				<img id="profile-pic" alt="Profile picture" src="images/Antriksh.jpg" class="img-circle">
-				<div id="htname">Antriksh&nbsp;Agarwal</div>
-				<a href="https://github.com/evamy"><svg aria-hidden="true" class="octicon octicon-mark-github" height="30" version="1.1" viewBox="0 0 16 16" width="30"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-				<a href="https://www.linkedin.com/in/antriksh-agarwal-a749a187"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" id="Layer_1" style="enable-background:new 0 0 67 67;" version="1.1" viewBox="3 3 64 64" xml:space="preserve"><path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#007AB9;"/></svg></a>
-				<!-- <a href=""><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 167.657 167.657" height="30" style="fill: rgb(0, 109, 240);" xml:space="preserve">
-				<g style="fill: rgb(0, 109, 240);">
-					<path style="fill: rgb(0, 109, 240);" d="M83.829,0.349C37.532,0.349,0,37.881,0,84.178c0,41.523,30.222,75.911,69.848,82.57v-65.081H49.626   v-23.42h20.222V60.978c0-20.037,12.238-30.956,30.115-30.956c8.562,0,15.92,0.638,18.056,0.919v20.944l-12.399,0.006   c-9.72,0-11.594,4.618-11.594,11.397v14.947h23.193l-3.025,23.42H94.026v65.653c41.476-5.048,73.631-40.312,73.631-83.154   C167.657,37.881,130.125,0.349,83.829,0.349z"></path>
-				</g>
-				</svg></a> -->
-				<a href="https://twitter.com/antriksh_ag"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 128 128" height="30" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="30" xml:space="preserve"><g><circle cx="64" cy="64" fill="#55ACEE" r="64"/></g><g><path d="M105,40.189c-2.943,1.306-6.105,2.188-9.428,2.584c3.39-2.031,5.99-5.248,7.217-9.08   c-3.171,1.881-6.684,3.247-10.422,3.983c-2.994-3.19-7.26-5.184-11.979-5.184c-9.065,0-16.414,7.349-16.414,16.412   c0,1.287,0.146,2.539,0.426,3.741C50.758,51.96,38.665,45.426,30.57,35.497c-1.413,2.423-2.223,5.243-2.223,8.251   c0,5.694,2.898,10.718,7.302,13.661c-2.69-0.085-5.222-0.824-7.434-2.054c-0.002,0.069-0.002,0.138-0.002,0.207   c0,7.954,5.657,14.584,13.166,16.093c-1.378,0.375-2.827,0.575-4.324,0.575c-1.058,0-2.086-0.103-3.088-0.295   c2.089,6.521,8.15,11.268,15.332,11.399c-5.617,4.401-12.694,7.024-20.384,7.024c-1.325,0-2.632-0.076-3.915-0.229   c7.263,4.657,15.892,7.374,25.16,7.374c30.188,0,46.697-25.01,46.697-46.698c0-0.711-0.018-1.42-0.049-2.123   C100.018,46.371,102.799,43.48,105,40.189" fill="#FFFFFF"/></g></svg></a>
-
-				<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
-				<hr class="styled-hr" style="width:100%;">
-				<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
-
-				<div id="timeline" >
-				    <div class="timelineitem">
-				      <div class="tdate">2016 -</div>
-				      <div class="ttitle">University of Texas at Dallas: Master's Degree</div>
-				      <div class="tdesc">Intelligent Systems, Data Science</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2015</div>
-				      <div class="ttitle">DeepMind Internship</div>
-				      <div class="tdesc">Deep Reinforcement Learning group</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2013</div>
-				      <div class="ttitle">Google Research Internship</div>
-				      <div class="tdesc">Large-Scale Supervised Deep Learning for Videos.</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">2011 - 2015</div>
-				      <div class="ttitle">Stanford Computer Science Ph.D. student</div>
-				      <div class="tdesc">Deep Learning, Computer Vision, Natural Language Processing. My adviser was <a href="http://vision.stanford.edu/">Fei-Fei Li.</a></div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2011</div>
-				      <div class="ttitle">Google Research Internship</div>
-				      <div class="tdesc">Large-Scale Unsupervised Deep Learning for Videos.</div>
-				    </div>
-				    <div class="timelineitem">
-				     <div class="tdate">2009-2011</div>
-				      <div class="ttitle">University of British Columbia: Master's Degree</div>
-				      <div class="tdesc">I worked with <a href="https://www.cs.ubc.ca/~van/">Michiel van de Panne</a> on learning Compositional Controllers for Physically-simulated Articulate Figures.</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">2005-2009
-				      </div>
-				      <div class="ttitle">University of Toronto: Bachelor's Degree</div>
-				      <div class="tdesc">Double major in Computer Science and Physics.</div>
-				    </div>
-				  </div>
-				
-				<h4>MS in Computer Science</h4>
-				<p>
-					As a diligent, hardworking and learning oriented individual, I create and accept challenges so that I can learn more than what is expected of me and push boundaries to achieve beyond the call of duty of the projects bestowed on me. I strive for excellence, and would work in an environment that will help me to enhance my skill-set and make meaningful contributions to areas of my expertise. I prize learning over performance, and welcome effort as a way to improve something that matters.
-					</p>
-					<p>
-					A Masters in Computer Science at the University of Texas at Dallas is a catalyst in teaching me the tools and techniques I need to know. A logical next step would be learning the industrial applications of these tools and concepts in order to complete the learning circle, so, I am actively seeking internship opportunities in:
-					<ul>
-						<li>Intelligent Systems</li>
-						<li>Data Science</li>
-						<li>Data Analysis</li>
-						<li>MachIne Learning</li>
-					</ul>
-					</p>
-
-					<!-- <div id="project-section">
-						<h4>Projects:</h4>
-						This section will be updated shortly.
-					</div> -->
-
-					<!-- <div id="publication-section">
-						<h4>Publications:</h4>
-						<ul>
-							<li><a href="http://ieeexplore.ieee.org/abstract/document/7489611/">Comparison of Linear Learning Methods for Click Through Rate Prediction</a>
-							</li>
-						</ul> 
-					</div> -->
-
-					<a href="pres_vocab.html">Let the Presidential Candidates fight !</a>
-
-				<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
-				<hr class="styled-hr" style="width:100%;">
-				<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
-
-				<div class="col-md-7 sidenav">
-					<div id="contact-info" class="well">
-
-						<span class="glyphicon glyphicon-info-sign"></span> 
-
-						<ul >
-							<li> 
-								<span class="contact-info-type"> Email: </span>	
-								Antriksh dot Agarwal1 at utdallas dot edu
-							</li>
-							<li> 
-								<span class="contact-info-type"> Specialisation: </span> 
-								Intelligent Systems and Data Science
-							</li>
-							<li>
-								<span class="contact-info-type">Relevant Courses: </span>
-								<ul>
-									<li>Artificial Intelligence (UTD)</li>
-									<li>Design and Analysis of Computer Algorithms (UTD)</li>
-									<li>Database Design (UTD)</li>
-									<li>Computer Vision (UTD)</li>
-									<li>Natural Language Processing (UTD)</li>
-								</ul>
-
-							</li>
-							
-							<li>
-								<span class="contact-info-type">Technical Skills: </span>
-								<li>Languages: Python, C/C++, R, Java</li>
-								<li>Big Data and Analytical tools: Hive, Pig, MapReduce and Spark; Python</li>
-								<li>DBMS Packages: Oracle, My-SQL</li>
-								<li>Version Control: Git</li>
-								<li>Operating Systems: Windows, Linux, Mac</li>
-							</li>
-							<li>
-								<span class="contact-info-type">Other Relevant Courses (Self): </span>
-								<ul>
-									<li>Machine Learning (Coursera, Andrew Ng)</li>
-									<li>Python Training (IIT Bombay)</li>
-									<li>Mining Massive Datasets (Coursera, Ullman)</li>
-									<li>Algorithms: Design and Analysis 1 (Coursera, Tim Roughgarden)</li>
-									<!-- <li>Compilers (Ongoing)</li> -->
-									<li>Image Analysis using Convolutional Neural Networks (Stanford Courses, Andrej Karpathy)</li>
-								</ul>
-
-							</li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-				</div>
-
-
-		
-		<div><div style="height: 20px; overflow: hidden; width: 100%;"></div>
-		<hr class="styled-hr" style="width:100%;">
-		<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
-
-		<footer class="footer" style="height:45px; position:fixed">
-			<div class="container">
-				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
-				<!-- <p>
-					<a href="http://jigsaw.w3.org/css-validator/check/referer">
-					<img id="css-validator"
-						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-						alt="Valid CSS!" />
-					</a>
-				</p> -->
-			</div>
-		</footer>
-
-	</body>
-
 	<script type="text/javascript">
 
-		function getRandomArbitrary() {
-		    return Math.random() * (1000) + 1;
+		function getRandomArbitrary(i) {
+		    return Math.random() * (i) + 1;
 		}
 		
 		var css = ['global.css','index.css']
@@ -235,8 +26,9 @@
 		d3.select("head").data(css)
 			.enter().append('link')
 			.attr('rel', 'stylesheet')
-			.attr('href',function(d){
-				name = "css/"+d+"?v="+getRandomArbitrary();
+			.attr('href',function(d, i){
+				console.log(d)
+				name = "css/"+d+"?v="+getRandomArbitrary(i);
 				return name;
 			});
 
@@ -244,11 +36,283 @@
 		// for(i=0;i<list.length;i++){
 		d3.select("head").data(js)
 			.enter().append('script')
-			.attr('src',function(d){
-				name = "js/"+d+"?v="+getRandomArbitrary();
+			.attr('src',function(d, i){
+				name = "js/"+d+"?v="+getRandomArbitrary(i);
 				return name;
 			});
 		// }
 	</script>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+	<nav class="navbar navbar-inverse header-dark">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png" style="height:20px"></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li id="home-link" class="active"><a href="/~antriksh.agarwal1/">Home</a></li>
+					<li id="about-link"><a href="#">Chat With Me</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+		<!-- BODY -->
+		<div class="container-fluid text-center">
+		<div class="row content">
+		
+
+		<!-- HEADER -->
+			<div id="headerblob" style="width: 100%; height: 280px; margin-top: -20px; background-color: #F0EAD6">
+				<img id="profile-pic"  alt="Profile picture" src="images/Antriksh.jpg" class="img-circle">
+				<div id="htname">Antriksh&nbsp;Agarwal</div>
+				<ul id="htinfo">
+					<li> 
+						<h3><span class="contact-info-type"> University of Texas at Dallas: Master's Degree </span></h3>
+					</li>
+					<li> 
+						<h4>antriksh.agarwal1 _at_ utdallas.edu</h4>
+					</li>
+				</ul>
+				<div id="links">
+				<a href="https://github.com/evamy"><svg aria-hidden="true" class="octicon octicon-mark-github" height="30" version="1.1" viewBox="0 0 16 16" width="30"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+				<a href="https://www.linkedin.com/in/antriksh-agarwal-a749a187"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" id="Layer_1" style="enable-background:new 0 0 67 67;" version="1.1" viewBox="3 3 64 64" xml:space="preserve"><path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#007AB9;"/></svg></a>
+				<a href="https://twitter.com/antriksh_ag"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 128 128" height="30" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="30" xml:space="preserve"><g><circle cx="64" cy="64" fill="#55ACEE" r="64"/></g><g><path d="M105,40.189c-2.943,1.306-6.105,2.188-9.428,2.584c3.39-2.031,5.99-5.248,7.217-9.08   c-3.171,1.881-6.684,3.247-10.422,3.983c-2.994-3.19-7.26-5.184-11.979-5.184c-9.065,0-16.414,7.349-16.414,16.412   c0,1.287,0.146,2.539,0.426,3.741C50.758,51.96,38.665,45.426,30.57,35.497c-1.413,2.423-2.223,5.243-2.223,8.251   c0,5.694,2.898,10.718,7.302,13.661c-2.69-0.085-5.222-0.824-7.434-2.054c-0.002,0.069-0.002,0.138-0.002,0.207   c0,7.954,5.657,14.584,13.166,16.093c-1.378,0.375-2.827,0.575-4.324,0.575c-1.058,0-2.086-0.103-3.088-0.295   c2.089,6.521,8.15,11.268,15.332,11.399c-5.617,4.401-12.694,7.024-20.384,7.024c-1.325,0-2.632-0.076-3.915-0.229   c7.263,4.657,15.892,7.374,25.16,7.374c30.188,0,46.697-25.01,46.697-46.698c0-0.711-0.018-1.42-0.049-2.123   C100.018,46.371,102.799,43.48,105,40.189" fill="#FFFFFF"/></g></svg></a>
+				</div>
+						
+				
+			</div>
+
+			<div class="col-lg-2"></div>
+
+			<div id="about-section" class="col-lg-8 text-center" style="text-align:justify; margin-top:50px">
+
+				<div id="timeline" >
+				    <div class="timelineitem">
+				      <div class="tdate">2016 - 2018</div>
+				      <div class="ttitle">University of Texas at Dallas: Master's Degree</div>
+				      <div class="tdesc">Intelligent Systems, Data Science</div>
+				    </div>
+				    <div class="timelineitem">
+				      <div class="tdate">Summer 2015</div>
+				      <div class="ttitle">Internship - Data Science</div>
+				      <div class="tdesc">Sopra, India: Worked on analysis of sentiment, developed Lexicon Bayes Classifier.</div>
+				    </div>
+				    <div class="timelineitem">
+				      <div class="tdate">2012 - 2016</div>
+				      <div class="ttitle">Jamia Millia Islamia, India: Bachelor's Degree</div>
+				      <div class="tdesc">Computer Science</div>
+				    </div>
+
+				  </div>
+
+				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
+				<hr class="soft" style="width:100%;">
+				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
+				<div class="bio">
+				<p>
+					<b>About</b>. As a diligent, hardworking and learning oriented individual, I create and accept challenges so that I can learn more than what is expected of me and push boundaries to achieve beyond the call of duty of the projects bestowed on me. I strive for excellence, and would work in an environment that will help me to enhance my skill-set and make meaningful contributions to areas of my expertise. I prize learning over performance, and welcome effort as a way to improve something that matters.
+					</p>
+					<p>
+					A Masters in Computer Science at the University of Texas at Dallas is a catalyst in teaching me the tools and techniques I need to know. A logical next step would be learning the industrial applications of these tools and concepts in order to complete the learning circle, so, I am actively seeking internship opportunities in:
+					<ul style="list-style: circle">
+						<li>Intelligent Systems</li>
+						<li>Data Science</li>
+						<li>Data Analysis</li>
+						<li>MachIne Learning</li>
+					</ul>
+					</p>
+				</div>
+
+				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
+				<hr class="soft" style="width:100%;">
+				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
+
+				<h2>Publications</h2>
+				<div id="pubs">
+
+			    <div class="pubwrap">
+			      <div class="row">
+			        <div class="col-md-6">
+			          <div class="pubimg">
+			            <img src="images/ctr.png">
+			          </div>
+			        </div>
+			        <div class="col-md-6">
+			          <div class="pub">
+			            <div class="pubt">Comparison of Linear Learning methods in Click-Through Rate Prediction</div>
+			            <div class="pubd">This study examines the performance of some well-known statistical learning methods (linear and logistic) with respect to their efficiency in predicting the click through rate of an impression. Our observations led us to the conclusion that with minimal data preprocessing, linear models give competitive on-par results suited for most practical applications, where the learning method chosen should not be computationally expensive.</div>
+			            <div class="puba">Antriksh Agarwal*, Avishkar Gupta*, Dr. Tanvir Ahmad</div>
+			            <div class="pubv">ICSCTI 2015 (Oral)</div>
+			            <div class="publ">
+			              <ul>
+			                <li><a href="data/ctr.pdf">PDF</a></li>
+			                <li><a href="https://github.com/evamy/avazu-ctr">Code (Github)</a></li>
+			              </ul>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+
+			</div>
+
+		</div>
+		<!-- END OF PUBLICATIONS -->
+				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
+				<hr class="soft" style="width:100%;">
+				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
+
+			<h2>Projects</h2>
+				<div class="row">
+
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="http://github.com/evamy/attendance">
+			          <img src="images/attendance.png" class="imgb">
+			        </a>
+			        <div class="ppt">Auto Attendance Monitoring</div>
+			        <div class="ppd">
+			        A combination of <i>detection</i> and <i>recognition</i> on human faces for automatic attendance monitoring. I worked hard for this, but could not make it real-time, but I did implement the system enough for the face to be detected and recognised.
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="http://cs.stanford.edu/people/karpathy/convnetjs/">
+			        <img src="images/locations.jpg" class="imgb">
+			        </a>
+			        <div class="ppt">HyperDrive</div>
+			        <div class="ppd">
+			          This project seemed to be most interesting for me when I started working on it during a Hackathon in India. I only developed a part of it there and then decided to take it up as a full semester project. I gave it as much time as possible and most of the research led me to get to implement recommender systems. I tried completing it using graph algorithms like the PageRank and HITS, processed using a modified version of the PageRank algorithm found in one of the research papers online.
+			        </div>
+			        
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="https://github.com/evamy/ClassifyLanguage">
+			          <img src="images/language.JPG" class="imgb">
+			        </a>
+			        <div class="ppt">Classify Language</div>
+			        <div class="ppd">
+			           Every language has a different grammar pattern, and sometimes people mix the grammars while writing text in English. We would like to use this idea and extend our knowledge in machine learning and natural language processing to figure out if this is doable. Till date I have attempted to figure out what to do with these and have been experimenting using Weka.
+			        </div>
+			      </div>
+			    </div>
+
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="https://github.com/evamy/flaming-tribble">
+			          <img src="images/sentiment2.jpg" class="imgb">
+			        </a>
+			        <div class="ppt">Flaming Tribble</div>
+			        <div class="ppd">
+			           This was my Internship project in Sopra, India. I had to produce an analysis of sentiment from tweets extracted from twitter which was then parsed and sentiment words were extracted. The goal was to find trends and analyse what people thought about that particular trend, which could then be used to make videos relevant to current trends for more viewership.
+			        </div>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="https://github.com/MLDaily/pacman">
+			          <img src="images/pacman.gif" class="imgb">
+			        </a>
+			        <div class="ppt">Pacman Projects</div>
+			        <div class="ppd">
+			           The famous Pacman Projects developed for AI Course at UCBerkeley. I completed this as a part of my class, AI, at UTDallas, The class was taught by Dr. Vibhav Gogate. The original projects can be viewed <a href="http://ai.berkeley.edu/project_overview.html">here</a>.
+			        </div>
+			      </div>
+			    </div>
+			    <div class="col-md-4">
+			      <div class="pp">
+			        <a href="pres_vocab.html">
+			          <img src="images/pres_vocab.PNG" class="imgb">
+			        </a>
+			        <div class="ppt">Presidents Speak</div>
+			        <div class="ppd">
+			           I was trying to estimate which President of The United States of America used the maximum vocabulary in their speeches during the presidential inaugural speech. As can be seen in the above bubble chart Franklin D. Roosevelt used the maximum vocabulary whereas Theodore Roosevelt, Donald J. Trump, Zachary Taylor etc. are among those who used very few distinct words.
+			        </div>
+			      </div>
+			    </div>
+
+			  </div>
+			  <!-- END OF PROJECTS -->
+
+			  <div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
+				<hr class="soft" style="width:100%;">
+				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
+
+			  <h2>Fun Stuff</h2>
+				<div id="pubs">
+
+			    <div class="pubwrap">
+			      <div class="row">
+			        <div class="col-md-6">
+			          <div class="pubimg">
+			            <img src="images/ctr.png">
+			          </div>
+			        </div>
+			        <div class="col-md-6">
+			          <div class="pub">
+			            <div class="pubt">Python Tutorials (With Machine Learning and Django)</div>
+			            <div class="pubd">We were super excited about what we knew about machine learning and wanted sophomores and juniors to learn more about the language as well have some extra motivation to learn and create more. The tutorials included python basics, including lists, dictionaries, sets etc. and all that could be done using these. We tried to move on to Django and Machine learning, but stuck to Machine Learning and Django basics as they were just for motivation. Inspired by the Machine Learning course on coursera, I did also try to make assignments for them in order to keep them as interested with the subject as possible.</div>
+			            <div class="puba">Antriksh Agarwal*, Zishan Ahmad*, Sarah Masud*, Shivam Rana*, Nikhil Mittal*</div>
+			            <!-- <div class="pubv">ICSCTI 2015 (Oral)</div> -->
+			            <div class="publ">
+			              <ul>
+			                <!-- <li><a href="data/ctr.pdf">PDF</a></li> -->
+			                <li><a href="https://github.com/nickedes/Pybaby">Code (Github)</a></li>
+			              </ul>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+
+			</div>
+
+		</div>
+		<!-- END OF FUN STUFF -->
+
+			</div>
+
+		</div>
+
+		<!-- END -->
+
+		</div>
+
+		
+
+
+	<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
+				<hr class="soft" style="width:100%;">
+				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
+
+		<footer class="footer" style="height:45px; position:fixed">
+			<div class="container">
+				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
+				 <p>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+					<img id="css-validator"
+						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+						alt="Valid CSS!" />
+					</a>
+				</p>
+			</div>
+		</footer>
+
+	</body>
 
 	</html>

@@ -6,122 +6,157 @@
 	<meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
 	<meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" href="css/chat.css">
-	<link rel="stylesheet" href="css/d3js.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
 	<script src="https://use.fontawesome.com/5239e29d17.js"></script>
 	<script src="js/index.js"></script>
 	<script src="d3/d3.js"></script>
-	<script src="http://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<title>Antriksh Agarwal - University of Texas, Dallas</title>
-</head>
+	<script type="text/javascript">
 
+		function getRandomArbitrary(i) {
+		    return Math.random() * (i) + 1;
+		}
+		
+		var css = ['global.css','index.css', 'chat.css', 'd3js.css']
+		// for(i=0;i<list.length;i++){
+		d3.select("head").data(css)
+			.enter().append('link')
+			.attr('rel', 'stylesheet')
+			.attr('href',function(d, i){
+				console.log(d)
+				name = "css/"+d+"?v="+getRandomArbitrary(i);
+				return name;
+			});
+
+		var js = ['index.js']
+		// for(i=0;i<list.length;i++){
+		d3.select("head").data(js)
+			.enter().append('script')
+			.attr('src',function(d, i){
+				name = "js/"+d+"?v="+getRandomArbitrary(i);
+				return name;
+			});
+		// }
+	</script>
+
+</head>
 <body>
 
-<style>
-
-
-
-</style>
-	<nav class="navbar navbar-inverse">
+		<!-- NAVBAR -->
+	<nav class="navbar navbar-inverse header-dark">
 		<div class="container-fluid">
 			<div class="navbar-header">
+				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png"></a>
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png"></a>
+				
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li id="home-link" class="active"><a href="/">Home</a></li>
-					<!-- <li id="about-link"><a href="#">About</a></li>
-					<li id="projects-link"><a href="#">Projects</a></li>
-					<li id="contact-link"><a href="#">Contact</a></li> -->
+					<li id="home-link" class="active"><a href="/~antriksh.agarwal1/">Home</a></li>
+					<li id="about-link"><a href="#">Chat With Me</a></li>
+					
 				</ul>
-				<!-- <ul class="nav navbar-nav navbar-right">
-					<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				</ul> -->
 			</div>
 		</div>
 	</nav>
-	<svg width="1000" height="1200"></svg>
-			
-	<script type="text/javascript ">
 
-			// var dataset = [];
-			// var words = []
-			// var width=$("div.draw").width()-20;
-			// var height=1200;
-			// var padding =2;
-			var svg = d3.select("svg"),
-			    width = +svg.attr("width");
+	
+	<div class="desc col-lg-1"></div>
+	<div class="desc col-lg-10" style="text-align: justify">
+			<!-- Diagram -->
+			<svg width="1000" height="1000"></svg>
+					
+			<script type="text/javascript ">
 
-			var format = d3.format(",d");
+					// var dataset = [];
+					// var words = []
+					// var width=$("div.draw").width()-20;
+					// var height=1200;
+					// var padding =2;
+					var svg = d3.select("svg"),
+					    width = +svg.attr("width");
 
-			var color = d3.scaleOrdinal(d3.schemeCategory20c);
+					var format = d3.format(",d");
 
-			var pack = d3.pack()
-			    .size([width, width])
-			    .padding(1.5);
-			
-			d3.csv("data/vocab.csv", function(d) {
-					d.value = +d.value;
-					// console.log(d.count, d.word);
-					if (d.value) return d;
-				}, function(error, classes) {
-				  if (error) throw error;
+					var color = d3.scaleOrdinal(d3.schemeCategory20c);
 
-				var root = d3.hierarchy({children: classes})
-			      .sum(function(d) {
-			      	return d.value; })
-			      .each(function(d) {
-			        if (id = d.data.id) {
-			          var id, i = id.lastIndexOf(id);
-			          d.id = id;
-			          d.package = id.slice(0, i);
-			          d.class = id.slice(0);
-			        }
-			      });
+					var pack = d3.pack()
+					    .size([width, width])
+					    .padding(1.5);
+					
+					d3.csv("data/vocab.csv", function(d) {
+							d.value = +d.value;
+							// console.log(d.count, d.word);
+							if (d.value) return d;
+						}, function(error, classes) {
+						  if (error) throw error;
 
-			  var node = svg.selectAll(".node")
-			    .data(pack(root).leaves())
-			    .enter().append("g")
-			      .attr("class", "node")
-			      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+						var root = d3.hierarchy({children: classes})
+					      .sum(function(d) {
+					      	return d.value; })
+					      .each(function(d) {
+					        if (id = d.data.id) {
+					          var id, i = id.lastIndexOf(id);
+					          d.id = id;
+					          d.package = id.slice(0, i);
+					          d.class = id.slice(0);
+					        }
+					      });
 
-			  node.append("circle")
-			      .attr("id", function(d) { return d.id; })
-			      .attr("r", function(d) { return d.r; })
-			      .style("fill", function(d) { return color(d.package); });
+					  var node = svg.selectAll(".node")
+					    .data(pack(root).leaves())
+					    .enter().append("g")
+					      .attr("class", "node")
+					      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-			  node.append("clipPath")
-			      .attr("id", function(d) { return "clip-" + d.id; })
-			    .append("use")
-			      .attr("xlink:href", function(d) { return "#" + d.id; });
+					  node.append("circle")
+					      .attr("id", function(d) { return d.id; })
+					      .attr("r", function(d) { return d.r; })
+					      .style("fill", function(d) { return color(d.package); });
 
-			  node.selectAll("text")
-					.data(function(d) {
-						return d.id.split(); })
-					.enter().append("text")
-					.attr("x", 0)
-					.attr("y", function(d, i, nodes) { return 13 + (i - nodes.length/2 - 0.5) * 10; })
-					.text(function(d) { 
-						return d;
+					  node.append("clipPath")
+					      .attr("id", function(d) { return "clip-" + d.id; })
+					    .append("use")
+					      .attr("xlink:href", function(d) { return "#" + d.id; });
+
+					  node.selectAll("text")
+							.data(function(d) {
+								return d.id.split(); })
+							.enter().append("text")
+							.attr("x", 0)
+							.attr("y", function(d, i, nodes) { return 13 + (i - nodes.length/2 - 0.5) * 10; })
+							.text(function(d) { 
+								return d;
+							});
+
+					  node.append("title")
+					      .text(function(d) { return d.id + "\n" + format(d.value); });
 					});
+				
+		    </script>
 
-			  node.append("title")
-			      .text(function(d) { return d.id + "\n" + format(d.value); });
-			});
-		
-    </script>
+				<div id="footer"><div style="height: 20px; overflow: hidden; width: 100%;"></div>
+			<hr class="styled-hr" style="width:100%;">
+			<div style="height: 20px; overflow: hidden; width: 100%;"></div></div>
+				<p>
+				<b>About</b>. I was trying to estimate which President of The United States of America used the maximum vocabulary in their speeches during the presidential inaugural speech.
+				As can be seen in the above <b>bubble chart</b> Franklin D. Roosevelt used the maximum vocabulary whereas Theodore Roosevelt, Donald J. Trump, Zachary Taylor etc. are among those 
+				who used very few distinct words.
+				</p>
+				<div style="height: 20px; overflow: hidden; width: 100%;"></div>
+				<hr class="styled-hr" style="width:100%;">
+				<div style="height: 20px; overflow: hidden; width: 100%;"></div>
+			</div>
 
-</body>
-
-		<footer class="footer">
+		<div id="footer">
+			<footer class="footer" style="height:45px; position:fixed">
 			<div class="container">
 				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
 				<!-- <p>
@@ -133,33 +168,8 @@
 				</p> -->
 			</div>
 		</footer>
-
+		</div>
 	</body>
-	<script type="text/javascript">
-
-		function getRandomArbitrary() {
-		    return Math.random() * (1000) + 1;
-		}
-		
-		var css = ['global.css','index.css']
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(css)
-			.enter().append('link')
-			.attr('rel', 'stylesheet')
-			.attr('href',function(d){
-				name = "css/"+d+"?v="+getRandomArbitrary();
-				return name;
-			});
-
-		var js = ['index.js']
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(js)
-			.enter().append('script')
-			.attr('src',function(d){
-				name = "js/"+d+"?v="+getRandomArbitrary();
-				return name;
-			});
-		// }
-	</script>
+	
 
 	</html>
