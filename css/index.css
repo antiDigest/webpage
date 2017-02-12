@@ -109,9 +109,6 @@ h2{
     font-weight: 400;
     font-size: 46px;
     line-height: 50px;
-
-    margin-top: -10%;
-    margin-left: 3%;
 }
 #timeline {
     font-size: 20px;
@@ -250,9 +247,11 @@ html, body {
   margin-left: 220px;
 }
 .imgme {
-  border: 3px solid white;
+  border: 3px solid black;
   /* box-shadow: #AAA 0px 0px 4px 0px; */
   float: left;
+  height: inherit;
+  width: auto;
 }
 #htdesc {
   font-size: 18px;
@@ -565,4 +564,48 @@ hr.soft {
 .bio{
     font-size: 20px;
     font-family: Roboto;
+}
+@media (max-width: 768px) {
+  #headerblob {
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+
+  }
+  .imgme {
+    float: none;
+  }
+  #headertext {
+    margin: 20px 0;
+  }
+  #htname {
+    font-size: 28px;
+  }
+  #htdesc {
+    font-size: 16px;
+  }
+}
+#topnav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px 5px 10px;
+  margin: 10px;
+  border: 1px solid #FFF;
+}
+#topnav a {
+  color: white;
+}
+#topnav a:hover {
+  text-decoration: none;
+}
+
+#headerblob {
+    /*position: absolute;*/
+    left: 20%;
+    top: 0px;
+    width: 80%;
+    height:200px;
 }
