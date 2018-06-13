@@ -1,397 +1,385 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
-	<meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
-	<script src="https://use.fontawesome.com/5239e29d17.js"></script>
-	<script src="js/index.js"></script>
-	<script src="d3/d3.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<title>Antriksh Agarwal - University of Texas, Dallas</title>
-	<script type="text/javascript">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
+    <meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
+    <script src="https://use.fontawesome.com/5239e29d17.js"></script>
+    <script src="js/index.js"></script>
+    <script src="d3/d3.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <title>Antriksh Agarwal • Sam's Club, Walmart, Inc.</title>
+    <script type="text/javascript">
+    function getRandomArbitrary(i) {
+        return Math.random() * (i) + 1;
+    }
 
-		function getRandomArbitrary(i) {
-		    return Math.random() * (i) + 1;
-		}
-		
-		var css = ["",'global.css','index.css']
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(css)
-			.enter().append('link')
-			.attr('rel', 'stylesheet')
-			.attr('href',function(d, i){
-				console.log(d)
-				name = "css/"+d+"?v="+getRandomArbitrary(i);
-				return name;
-			});
+    var css = ["", 'global.css', 'index.css']
+    // for(i=0;i<list.length;i++){
+    d3.select("head").data(css)
+        .enter().append('link')
+        .attr('rel', 'stylesheet')
+        .attr('href', function(d, i) {
+            console.log(d)
+            name = "css/" + d + "?v=" + getRandomArbitrary(i);
+            return name;
+        });
 
-		var js = ["",'index.js']
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(js)
-			.enter().append('script')
-			.attr('src',function(d, i){
-				name = "js/"+d+"?v="+getRandomArbitrary(i);
-				return name;
-			});
-		// }
-	</script>
-
+    var js = ["", 'index.js']
+    // for(i=0;i<list.length;i++){
+    d3.select("head").data(js)
+        .enter().append('script')
+        .attr('src', function(d, i) {
+            name = "js/" + d + "?v=" + getRandomArbitrary(i);
+            return name;
+        });
+    // }
+    </script>
 </head>
 
 <body>
-
-<!-- NAVBAR -->
-	<nav class="navbar navbar-inverse header-dark">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="https://www.utdallas.edu/"> <img id ="utd-logo" alt="UTD logo" src="images/utd_logo.png" style="height:20px"></a>
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-
-					<li id="home-link" class="active"><a href="/~antriksh.agarwal1/">Home</a></li>
-					<li id="about-link" title="Still work in progress"><a href="#">Chat With Me</a></li>
-					
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-		<!-- BODY -->
-		<div class="container-fluid text-center">
-		<div class="row content">
-		
-
-		<!-- HEADER -->
-
-			<div class="col-lg-2"></div>
-
-			<div id="about-section" class="col-lg-8 text-center" style="text-align:justify; margin-top:50px">
-
-
-				<div id="headerblob">
-				    <img src="images/Antriksh.jpg" class="img-circle imgme profile-pic">
-				    <div id="headertext">
-				      <div id="htname">Antriksh Agarwal</div>
-				      <div id="htdesc">University of Texas at Dallas: Master's Degree</div>
-				      <div id="htem">antriksh _dot_ agarwal1 _at_ utdallas.edu</div>
-				      <div id="icons" style="margin-top:20px">
-				      	<a href="https://github.com/evamy" title="GitHub"><svg aria-hidden="true" class="octicon octicon-mark-github" height="30" version="1.1" viewBox="0 0 16 16" width="30" ><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
-						<a href="https://www.linkedin.com/in/antriksh-agarwal-a749a187" title="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" id="Layer_1" style="enable-background:new 0 0 67 67;" version="1.1" viewBox="3 3 64 64" xml:space="preserve" title="LinkedIn"><path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#007AB9;"/></svg></a>
-						<a href="https://twitter.com/antriksh_ag" title="Twitter"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 128 128" height="30" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="30" xml:space="preserve"><g><circle cx="64" cy="64" fill="#55ACEE" r="64" title="Twitter"/></g><g><path d="M105,40.189c-2.943,1.306-6.105,2.188-9.428,2.584c3.39-2.031,5.99-5.248,7.217-9.08   c-3.171,1.881-6.684,3.247-10.422,3.983c-2.994-3.19-7.26-5.184-11.979-5.184c-9.065,0-16.414,7.349-16.414,16.412   c0,1.287,0.146,2.539,0.426,3.741C50.758,51.96,38.665,45.426,30.57,35.497c-1.413,2.423-2.223,5.243-2.223,8.251   c0,5.694,2.898,10.718,7.302,13.661c-2.69-0.085-5.222-0.824-7.434-2.054c-0.002,0.069-0.002,0.138-0.002,0.207   c0,7.954,5.657,14.584,13.166,16.093c-1.378,0.375-2.827,0.575-4.324,0.575c-1.058,0-2.086-0.103-3.088-0.295   c2.089,6.521,8.15,11.268,15.332,11.399c-5.617,4.401-12.694,7.024-20.384,7.024c-1.325,0-2.632-0.076-3.915-0.229   c7.263,4.657,15.892,7.374,25.16,7.374c30.188,0,46.697-25.01,46.697-46.698c0-0.711-0.018-1.42-0.049-2.123   C100.018,46.371,102.799,43.48,105,40.189" fill="#FFFFFF"/></g></svg></a>
-						<a href="https://kaggle.com/antriksh5235" title="Kaggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" height="25" title="Kaggle"><path d="M12.55 15.906c-.015.062-.078.094-.187.094H10.27c-.124 0-.234-.055-.328-.165L6.49 11.442l-.965.916v3.407c0 .157-.078.235-.235.235H3.67c-.158 0-.236-.078-.236-.235V.235C3.434.08 3.512 0 3.67 0h1.62c.157 0 .235.08.235.235v9.562L9.66 5.615c.11-.11.22-.164.33-.164h2.16c.095 0 .157.04.19.12.03.1.023.17-.024.21l-4.37 4.23 4.557 5.67c.063.07.078.14.047.24" fill="#007AB9"/></svg></a>
-
-				      </div>
-				    </div>
-				  </div>
-
-				  <div style="margin-top:250px"><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%; position:relative"></div></div>
-
-				<div id="timeline" >
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2018</div>
-				      <div class="ttitle">Programmer Analyst</div>
-				      <div class="tdesc">Sam's Club, Walmart, Inc.: Current Employer. Working on a completely new project related to Wholesale Trading.</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2017</div>
-				      <div class="ttitle">Data Science Intern</div>
-				      <div class="tdesc">JM Family Enterprises, Inc.: Worked on analysis of sentiment, developed Lesk Based Classifier.</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">2016 - 2018</div>
-				      <div class="ttitle">University of Texas at Dallas: Master's Degree</div>
-				      <div class="tdesc">Intelligent Systems, Data Science</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">Summer 2015</div>
-				      <div class="ttitle">Internship - Data Science</div>
-				      <div class="tdesc">Sopra, India: Worked on analysis of sentiment, developed Lexicon Bayes Classifier.</div>
-				    </div>
-				    <div class="timelineitem">
-				      <div class="tdate">2012 - 2016</div>
-				      <div class="ttitle">Jamia Millia Islamia, India: Bachelor's Degree</div>
-				      <div class="tdesc">Computer Science</div>
-				    </div>
-
-				  </div>
-
-				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-				<div class="bio">
-				<p>
-					<b>About</b>. As a diligent, hardworking and learning oriented individual, I create and accept challenges so that I can learn more than what is expected of me and push boundaries to achieve beyond the call of duty of the projects bestowed on me. I strive for excellence, and would work in an environment that will help me to enhance my skill-set and make meaningful contributions to areas of my expertise. I prize learning over performance, and welcome effort as a way to improve something that matters.
-					</p>
-					<p>
-					A Masters in Computer Science at the University of Texas at Dallas is a catalyst in teaching me the tools and techniques I need to know. A logical next step would be learning the industrial applications of these tools and concepts in order to complete the learning circle, so, I am actively seeking internship opportunities in:
-					<ul style="list-style: circle;">
-						<li style="display: list-item;">Intelligent Systems</li>
-						<li style="display: list-item;">Data Science</li>
-						<li style="display: list-item;">Data Analysis</li>
-						<li style="display: list-item;">MachIne Learning</li>
-					</ul>
-					</p>
-				</div>
-
-				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-
-				<h2>Publications</h2>
-				<div id="pubs">
-
-			    <div class="pubwrap">
-			      <div class="row">
-			        <div class="col-md-6">
-			          <div class="pubimg">
-			            <img src="images/ctr.png">
-			          </div>
-			        </div>
-			        <div class="col-md-6">
-			          <div class="pub">
-			            <div class="pubt">Comparison of Linear Learning methods in Click-Through Rate Prediction</div>
-			            <div class="pubd">This study examines the performance of some well-known statistical learning methods (linear and logistic) with respect to their efficiency in predicting the click through rate of an impression. Our observations led us to the conclusion that with minimal data preprocessing, linear models give competitive on-par results suited for most practical applications, where the learning method chosen should not be computationally expensive.</div>
-			            <div class="puba">Antriksh Agarwal*, Avishkar Gupta*, Dr. Tanvir Ahmad</div>
-			            <div class="pubv">ICSCTI 2015 (Oral)</div>
-			            <div class="publ">
-			              <ul>
-			                <li><a href="data/ctr.pdf">PDF</a></li>
-			                <li><a href="https://github.com/evamy/avazu-ctr">Code (Github)</a></li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			      </div>
-
-			</div>
-
-		</div>
-		<!-- END OF PUBLICATIONS -->
-				<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-
-			<h2>Projects</h2>
-				<div class="row">
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="http://github.com/evamy/attendance">
+    <div id="bg1">
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-inverse header-dark">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="https://samsclub.com/"> <img id ="logo" alt="samsclub logo" src="images/Wal-Mart Sams Logo.JPG"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li id="home-link" class="active"><a href="/">Home</a></li>
+                        <li id="about-link" title="Still work in progress"><a href="/chat.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- BODY -->
+        <div class="container text-center">
+            <div class="row content">
+                <!-- HEADER -->
+                <div class="col-lg-2"></div>
+                <div id="about-section" class="col-lg-8" style="float: left">
+                    <div id="headerblob">
+                        <img src="images/Antriksh.jpg" class="img-circle imgme profile-pic">
+                        <div id="headertext">
+                            <div id="htname">Antriksh Agarwal</div>
+                            <div id="htdesc">Sam's Club, Walmart, Inc.: Programmer Analyst</div>
+                            <div id="htem">antriksh _dot_ agarwal _at_ samsclub.com</div>
+                            <div id="icons" style="margin-top:20px">
+                                <a href="https://github.com/evamy" title="GitHub">
+                                    <svg aria-hidden="true" class="octicon octicon-mark-github" height="30" version="1.1" viewBox="0 0 16 16" width="30">
+                                        <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                                    </svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/antriksh-agarwal-a749a187" title="LinkedIn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" id="Layer_1" style="enable-background:new 0 0 67 67;" version="1.1" viewBox="3 3 64 64" xml:space="preserve" title="LinkedIn">
+                                        <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:#007AB9;" />
+                                    </svg>
+                                </a>
+                                <a href="https://twitter.com/antriksh_ag" title="Twitter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 128 128" height="30" id="Layer_1" version="1.1" viewBox="0 0 128 128" width="30" xml:space="preserve">
+                                        <g>
+                                            <circle cx="64" cy="64" fill="#55ACEE" r="64" title="Twitter" />
+                                        </g>
+                                        <g>
+                                            <path d="M105,40.189c-2.943,1.306-6.105,2.188-9.428,2.584c3.39-2.031,5.99-5.248,7.217-9.08   c-3.171,1.881-6.684,3.247-10.422,3.983c-2.994-3.19-7.26-5.184-11.979-5.184c-9.065,0-16.414,7.349-16.414,16.412   c0,1.287,0.146,2.539,0.426,3.741C50.758,51.96,38.665,45.426,30.57,35.497c-1.413,2.423-2.223,5.243-2.223,8.251   c0,5.694,2.898,10.718,7.302,13.661c-2.69-0.085-5.222-0.824-7.434-2.054c-0.002,0.069-0.002,0.138-0.002,0.207   c0,7.954,5.657,14.584,13.166,16.093c-1.378,0.375-2.827,0.575-4.324,0.575c-1.058,0-2.086-0.103-3.088-0.295   c2.089,6.521,8.15,11.268,15.332,11.399c-5.617,4.401-12.694,7.024-20.384,7.024c-1.325,0-2.632-0.076-3.915-0.229   c7.263,4.657,15.892,7.374,25.16,7.374c30.188,0,46.697-25.01,46.697-46.698c0-0.711-0.018-1.42-0.049-2.123   C100.018,46.371,102.799,43.48,105,40.189" fill="#FFFFFF" />
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="https://kaggle.com/antriksh5235" title="Kaggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="1 1 16 16" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" height="25" title="Kaggle">
+                                        <path d="M12.55 15.906c-.015.062-.078.094-.187.094H10.27c-.124 0-.234-.055-.328-.165L6.49 11.442l-.965.916v3.407c0 .157-.078.235-.235.235H3.67c-.158 0-.236-.078-.236-.235V.235C3.434.08 3.512 0 3.67 0h1.62c.157 0 .235.08.235.235v9.562L9.66 5.615c.11-.11.22-.164.33-.164h2.16c.095 0 .157.04.19.12.03.1.023.17-.024.21l-4.37 4.23 4.557 5.67c.063.07.078.14.047.24" fill="#007AB9" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row content">
+            <div style="margin-top:0px">
+                <div style="height: 0px; overflow: hidden; width: 100%;"></div>
+                <hr class="soft" style="width:100%;">
+                <div style="height: 30px; overflow: hidden; width: 100%; position:relative"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center">
+        <div class="row content">
+            <div id="timeline">
+                <div class="timelineitem">
+                    <div class="tdate">Since June 2018</div>
+                    <div class="ttitle">Programmer Analyst</div>
+                    <div class="tdesc">Sam's Club, Walmart, Inc.: Current Employer. Working on a completely new project related to Wholesale Trading.</div>
+                </div>
+                <div class="timelineitem">
+                    <div class="tdate">Summer 2017</div>
+                    <div class="ttitle">Data Science Intern</div>
+                    <div class="tdesc">JM Family Enterprises, Inc.: Worked on analysis of sentiment, developed Lesk Based Classifier.</div>
+                </div>
+                <div class="timelineitem">
+                    <div class="tdate">2016 - 2018</div>
+                    <div class="ttitle">University of Texas at Dallas: Master's Degree</div>
+                    <div class="tdesc">Intelligent Systems, Data Science</div>
+                </div>
+                <div class="timelineitem">
+                    <div class="tdate">Summer 2015</div>
+                    <div class="ttitle">Internship - Data Science</div>
+                    <div class="tdesc">Sopra, India: Worked on analysis of sentiment, developed Lexicon Bayes Classifier.</div>
+                </div>
+                <div class="timelineitem">
+                    <div class="tdate">2012 - 2016</div>
+                    <div class="ttitle">Jamia Millia Islamia, India: Bachelor's Degree</div>
+                    <div class="tdesc">Computer Science</div>
+                </div>
+            </div>
+            <div>
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                <hr class="soft" style="width:100%;">
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+            </div>
+            <div class="bio">
+                <p>
+                    <b>About</b>. As a diligent, hardworking and learning oriented individual, I create and accept challenges so that I can learn more than what is expected of me and push boundaries to achieve beyond the call of duty of the projects bestowed on me. I strive for excellence, and would work in an environment that will help me to enhance my skill-set and make meaningful contributions to areas of my expertise. I prize learning over performance, and welcome effort as a way to improve something that matters.
+                </p>
+                <p>
+                    A Masters in Computer Science at the University of Texas at Dallas is a catalyst in teaching me the tools and techniques I need to know. A logical next step would be learning the industrial applications of these tools and concepts in order to complete the learning circle, so, I am actively seeking internship opportunities in:
+                    <ul style="list-style: circle;">
+                        <li style="display: list-item;">Intelligent Systems</li>
+                        <li style="display: list-item;">Data Science</li>
+                        <li style="display: list-item;">Data Analysis</li>
+                        <li style="display: list-item;">MachIne Learning</li>
+                    </ul>
+                </p>
+            </div>
+            <div>
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                <hr class="soft" style="width:100%;">
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+            </div>
+            <h2>Publications</h2>
+            <div id="pubs">
+                <div class="pubwrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="pubimg">
+                                <img src="images/ctr.png">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="pub">
+                                <div class="pubt">Comparison of Linear Learning methods in Click-Through Rate Prediction</div>
+                                <div class="pubd">This study examines the performance of some well-known statistical learning methods (linear and logistic) with respect to their efficiency in predicting the click through rate of an impression. Our observations led us to the conclusion that with minimal data preprocessing, linear models give competitive on-par results suited for most practical applications, where the learning method chosen should not be computationally expensive.</div>
+                                <div class="puba">Antriksh Agarwal*, Avishkar Gupta*, Dr. Tanvir Ahmad</div>
+                                <div class="pubv">ICSCTI 2015 (Oral)</div>
+                                <div class="publ">
+                                    <ul>
+                                        <li><a href="data/ctr.pdf">PDF</a></li>
+                                        <li><a href="https://github.com/evamy/avazu-ctr">Code (Github)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF PUBLICATIONS -->
+            <div>
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                <hr class="soft" style="width:100%;">
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+            </div>
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="http://github.com/evamy/attendance">
 			          <img src="images/attendance.png" class="imgb">
 			        </a>
-			        <div class="ppt">Auto Attendance Monitoring</div>
-			        <div class="ppd">
-			        A combination of <i>detection</i> and <i>recognition</i> on human faces for automatic attendance monitoring. I worked hard for this, but could not make it real-time, but I did implement the system enough for the face to be detected and recognised.
-			        </div>
-			      </div>
-			    </div>
-
-			    
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/evamy/ClassifyLanguage">
+                        <div class="ppt">Auto Attendance Monitoring</div>
+                        <div class="ppd">
+                            A combination of <i>detection</i> and <i>recognition</i> on human faces for automatic attendance monitoring. I worked hard for this, but could not make it real-time, but I did implement the system enough for the face to be detected and recognised.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/evamy/ClassifyLanguage">
 			          <img src="images/language.JPG" class="imgb">
 			        </a>
-			        <div class="ppt">Classify Language</div>
-			        <div class="ppd">
-			           Every language has a different grammar pattern, and sometimes people mix the grammars while writing text in English. We would like to use this idea and extend our knowledge in machine learning and natural language processing to figure out if this is doable. Till date I have attempted to figure out what to do with these and have been experimenting using Weka.
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/evamy/flaming-tribble">
+                        <div class="ppt">Classify Language</div>
+                        <div class="ppd">
+                            Every language has a different grammar pattern, and sometimes people mix the grammars while writing text in English. We would like to use this idea and extend our knowledge in machine learning and natural language processing to figure out if this is doable. Till date I have attempted to figure out what to do with these and have been experimenting using Weka.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/evamy/flaming-tribble">
 			          <img src="images/sentiment2.jpg" class="imgb">
 			        </a>
-			        <div class="ppt">Flaming Tribble</div>
-			        <div class="ppd">
-			           This was my Internship project in Sopra, India. I had to produce an analysis of sentiment from tweets extracted from twitter which was then parsed and sentiment words were extracted. The goal was to find trends and analyse what people thought about that particular trend, which could then be used to make videos relevant to current trends for more viewership.
-			        </div>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/MLDaily/pacman">
+                        <div class="ppt">Flaming Tribble</div>
+                        <div class="ppd">
+                            This was my Internship project in Sopra, India. I had to produce an analysis of sentiment from tweets extracted from twitter which was then parsed and sentiment words were extracted. The goal was to find trends and analyse what people thought about that particular trend, which could then be used to make videos relevant to current trends for more viewership.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/MLDaily/pacman">
 			          <img src="images/pacman.gif" class="imgb">
 			        </a>
-			        <div class="ppt">Pacman Projects</div>
-			        <div class="ppd">
-			           The famous Pacman Projects developed for AI Course at UCBerkeley. I completed this as a part of my class, AI, at UTDallas, The class was taught by Dr. Vibhav Gogate. The original projects can be viewed <a href="http://ai.berkeley.edu/project_overview.html">here</a>.
-			        </div>
-			      </div>
-			    </div>
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="pres_vocab.html">
+                        <div class="ppt">Pacman Projects</div>
+                        <div class="ppd">
+                            The famous Pacman Projects developed for AI Course at UCBerkeley. I completed this as a part of my class, AI, at UTDallas, The class was taught by Dr. Vibhav Gogate. The original projects can be viewed <a href="http://ai.berkeley.edu/project_overview.html">here</a>.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="pres_vocab.html">
 			          <img src="images/pres_vocab.PNG" class="imgb">
 			        </a>
-			        <div class="ppt">Presidents Speak</div>
-			        <div class="ppd">
-			           I was trying to estimate which President of The United States of America used the maximum vocabulary in their speeches during the presidential inaugural speech. As can be seen in the above bubble chart Franklin D. Roosevelt used the maximum vocabulary whereas Theodore Roosevelt, Donald J. Trump, Zachary Taylor etc. are among those who used very few distinct words.
-			        </div>
-			      </div>
-			    </div>
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="pres_vocab.html">
+                        <div class="ppt">Presidents Speak</div>
+                        <div class="ppd">
+                            I was trying to estimate which President of The United States of America used the maximum vocabulary in their speeches during the presidential inaugural speech. As can be seen in the above bubble chart Franklin D. Roosevelt used the maximum vocabulary whereas Theodore Roosevelt, Donald J. Trump, Zachary Taylor etc. are among those who used very few distinct words.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="pres_vocab.html">
 			          <img src="images/tictactoe.png" class="imgb">
 			        </a>
-			        <div class="ppt">Tic-Tac-Toe-AI</div>
-			        <div class="ppd">
-			          More recently, I have taken a liking to develop games and then develop AI over those games against users playing. Just a start, let's see what comes along.
-			        </div>
-			      </div>
-			    </div>
-
-			  </div>
-			  <!-- END OF PROJECTS -->
-
-			  <div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-
-			<!-- HACKATHONS -->
-
-			  <h2>Hackathon Fun</h2>
-				<div class="row">
-
-				<div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/evamy/HackUTD">
+                        <div class="ppt">Tic-Tac-Toe-AI</div>
+                        <div class="ppd">
+                            More recently, I have taken a liking to develop games and then develop AI over those games against users playing. Just a start, let's see what comes along.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF PROJECTS -->
+            <div>
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                <hr class="soft" style="width:100%;">
+                <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+            </div>
+            <!-- HACKATHONS -->
+            <h2>Hackathon Fun</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/evamy/HackUTD">
 			        <img src="images/doctor.jpg" class="imgb">
 			        </a>
-			        <div class="ppt">Doctor Bot</div>
-			        <div class="ppd">
-			         Chat bot designed to make diagnosing illness easier. This conversational bot is named Hi Doc and comes with in-build state-of-art machine learning algorithms to detect diagnosis from symptoms. It also allows users to contact doctors, book appointments, and ask questions with the chat bot intended to speed up this process. Implemented in HackUTD 2017.
-			        </div>
-			        
-			      </div>
-			    </div>
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/mldaily/HyperDrive">
+                        <div class="ppt">Doctor Bot</div>
+                        <div class="ppd">
+                            Chat bot designed to make diagnosing illness easier. This conversational bot is named Hi Doc and comes with in-build state-of-art machine learning algorithms to detect diagnosis from symptoms. It also allows users to contact doctors, book appointments, and ask questions with the chat bot intended to speed up this process. Implemented in HackUTD 2017.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/mldaily/HyperDrive">
 			        <img src="images/locations.jpg" class="imgb">
 			        </a>
-			        <div class="ppt">HyperDrive</div>
-			        <div class="ppd">
-			          What places would a user be interested in visiting, based on his travel history ? The trick was to use customer feedback in identifying significant places of interest. A hybrid of collaborative and content-based filtering gave the desired results. Also experimented with a modified version of PageRank and HITS algorithm for better performance over a graph of movement. Implemented in TiECon India, 2015.
-			        </div>
-			        
-			      </div>
-			    </div>
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/evamy/AngelHack15">
+                        <div class="ppt">HyperDrive</div>
+                        <div class="ppd">
+                            What places would a user be interested in visiting, based on his travel history ? The trick was to use customer feedback in identifying significant places of interest. A hybrid of collaborative and content-based filtering gave the desired results. Also experimented with a modified version of PageRank and HITS algorithm for better performance over a graph of movement. Implemented in TiECon India, 2015.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/evamy/AngelHack15">
 			        <img src="images/song.png" class="imgb">
 			        </a>
-			        <div class="ppt">Song</div>
-			        <div class="ppd">
-			          In a company, the collaboration of songs is difficult and the common songs playing might be frustrating at times. We devised a method to vote what songs everyone likes and the songs being played will then be based on the majority voting in the playlist. Songs can also be uploaded to the playlist. Implemented in AngelHack 2015.
-			        </div>
-			        
-			      </div>
-			    </div>
-
-			    <div class="col-md-4">
-			      <div class="pp">
-			        <a href="https://github.com/evamy/nsmusic">
+                        <div class="ppt">Song</div>
+                        <div class="ppd">
+                            In a company, the collaboration of songs is difficult and the common songs playing might be frustrating at times. We devised a method to vote what songs everyone likes and the songs being played will then be based on the majority voting in the playlist. Songs can also be uploaded to the playlist. Implemented in AngelHack 2015.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pp">
+                        <a href="https://github.com/evamy/nsmusic">
 			        <img src="images/song.png" class="imgb">
 			        </a>
-			        <div class="ppt">Music</div>
-			        <div class="ppd">
-			          The idea was to implement a mood based song player. It was to identify moods and play the songs similar to that mood. A big one for a 24 hour hackathon, so we just were able to implement the sentiment analysis of songs into some sentiments. Also used a bluemix API to provide it an interface. Implemented in AngelHack 2015.
-			        </div>
-			        
-			      </div>
-			    </div>
-
-			   <!-- END OF HACKATHONS -->
-
-
-			  <div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-
-			  <h2>Fun Stuff</h2>
-				<div id="pubs">
-
-			    <div class="pubwrap">
-			      <div class="row">
-			        <div class="col-md-6">
-			          <div class="pubimg">
-			            <img src="images/python.jpg" style="max-width: 400px">
-			          </div>
-			        </div>
-			        <div class="col-md-6">
-			          <div class="pub">
-			            <div class="pubt">Python Tutorials (With Machine Learning and Django)</div>
-			            <div class="pubd">We were super excited about what we knew about machine learning and wanted sophomores and juniors to learn more about the language as well have some extra motivation to learn and create more. The tutorials included python basics, including lists, dictionaries, sets etc. and all that could be done using these. We tried to move on to Django and Machine learning, but stuck to Machine Learning and Django basics as they were just for motivation. Inspired by the Machine Learning course on coursera, I did also try to make assignments for them in order to keep them as interested with the subject as possible.</div>
-			            <div class="puba">Antriksh Agarwal*, Zishan Ahmad*, Sarah Masud*, Shivam Rana*, Nikhil Mittal*</div>
-			            <!-- <div class="pubv">ICSCTI 2015 (Oral)</div> -->
-			            <div class="publ">
-			              <ul>
-			                <!-- <li><a href="data/ctr.pdf">PDF</a></li> -->
-			                <li><a href="https://github.com/nickedes/Pybaby">Code (Github)</a></li>
-			                <li><a href="https://github.com/MLDaily/ml101">Machine Learning</a></li>
-			              </ul>
-			            </div>
-			          </div>
-			        </div>
-			      </div>
-
-			</div>
-
-		</div>
-		<!-- END OF FUN STUFF -->
-
-			</div>
-
-		</div>
-
-		<!-- END -->
-
-		</div>
-
-		
-
-
-	<div><div style="height: 30px; overflow: hidden; width: 100%;"></div>
-				<hr class="soft" style="width:100%;">
-				<div style="height: 30px; overflow: hidden; width: 100%;"></div></div>
-
-		<footer class="footer" style="height:45px; position:fixed">
-			<div class="container">
-				<p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
-				 <p>
-					<a href="http://jigsaw.w3.org/css-validator/check/referer">
+                        <div class="ppt">Music</div>
+                        <div class="ppd">
+                            The idea was to implement a mood based song player. It was to identify moods and play the songs similar to that mood. A big one for a 24 hour hackathon, so we just were able to implement the sentiment analysis of songs into some sentiments. Also used a bluemix API to provide it an interface. Implemented in AngelHack 2015.
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF HACKATHONS -->
+                <div>
+                    <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                    <hr class="soft" style="width:100%;">
+                    <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+                </div>
+                <h2>Fun Stuff</h2>
+                <div id="pubs">
+                    <div class="pubwrap">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="pubimg">
+                                    <img src="images/python.jpg" style="max-width: 400px">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="pub">
+                                    <div class="pubt">Python Tutorials (With Machine Learning and Django)</div>
+                                    <div class="pubd">We were super excited about what we knew about machine learning and wanted sophomores and juniors to learn more about the language as well have some extra motivation to learn and create more. The tutorials included python basics, including lists, dictionaries, sets etc. and all that could be done using these. We tried to move on to Django and Machine learning, but stuck to Machine Learning and Django basics as they were just for motivation. Inspired by the Machine Learning course on coursera, I did also try to make assignments for them in order to keep them as interested with the subject as possible.</div>
+                                    <div class="puba">Antriksh Agarwal*, Zishan Ahmad*, Sarah Masud*, Shivam Rana*, Nikhil Mittal*</div>
+                                    <!-- <div class="pubv">ICSCTI 2015 (Oral)</div> -->
+                                    <div class="publ">
+                                        <ul>
+                                            <!-- <li><a href="data/ctr.pdf">PDF</a></li> -->
+                                            <li><a href="https://github.com/nickedes/Pybaby">Code (Github)</a></li>
+                                            <li><a href="https://github.com/MLDaily/ml101">Machine Learning</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF FUN STUFF -->
+            </div>
+        </div>
+        <!-- END -->
+    </div>
+    <div>
+        <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+        <hr class="soft" style="width:100%;">
+        <div style="height: 30px; overflow: hidden; width: 100%;"></div>
+    </div>
+    <footer class="footer" style="height:45px; position:fixed">
+        <div class="container">
+            <p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
+            <p>
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
 					<img id="css-validator"
 						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
 						alt="Valid CSS!" />
 					</a>
-				</p>
-			</div>
-		</footer>
+            </p>
+        </div>
+    </footer>
+</body>
 
-	</body>
-
-	</html>
+</html>

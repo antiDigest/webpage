@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<title>Jordan Staniscia &middot; Designer</title>
-  	<meta name="description" content="Jordan Staniscia is a designer for Instacart. He has previously built interfaces and infrastructure for companies like Storify, Heyzap, Livefyre, and others.">
-  	
-  	<link rel="shortcut icon" href="images/favicon.ico">
-  	<!-- <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>J.A.R.V.I.S &middot; My Personal Assistant</title>
+    <meta name="description" content="Just Another Rather Very Intelligent System.">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/style.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" media="all" href="css/animate.css"> -->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
-	<script src="d3/d3.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-
-	<!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> -->
-	<!-- <script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script> -->
-	<!-- <script type="text/javascript" src="js/talk.js"></script> -->
-	<!-- <script>
+    <!-- <link rel="stylesheet" type="text/css" media="all" href="css/animate.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
+    <script src="d3/d3.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> -->
+    <!-- <script src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/talk.js"></script> -->
+    <!-- <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -31,63 +28,53 @@
 	  ga('send', 'pageview');
 
 	</script> -->
-	<script type="text/javascript">
+    <script type="text/javascript">
+    function getRandomArbitrary(i) {
+        return Math.random() * (i) + 1;
+    }
 
-		function getRandomArbitrary(i) {
-		    return Math.random() * (i) + 1;
-		}
-		
-		var css = ["",'global.css','index.css','style.css','reset.css'];
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(css)
-			.enter().append('link')
-			.attr('rel', 'stylesheet')
-			.attr('href',function(d, i){
-				name = "css/"+d+"?v="+getRandomArbitrary(i);
-				return name;
-			});
+    var css = ["", 'global.css', 'index.css', 'style.css', 'reset.css'];
+    // for(i=0;i<list.length;i++){
+    d3.select("head").data(css)
+        .enter().append('link')
+        .attr('rel', 'stylesheet')
+        .attr('href', function(d, i) {
+            name = "css/" + d + "?v=" + getRandomArbitrary(i);
+            return name;
+        });
 
-		var js = ["",'index.js','talk.js'];
-		// for(i=0;i<list.length;i++){
-		d3.select("head").data(js)
-			.enter().append('script')
-			.attr('src',function(d, i){
-				name = "js/"+d+"?v="+getRandomArbitrary(i);
-				return name;
-			});
-		// }
-	</script>
+    var js = ["", 'index.js', 'talk.js'];
+    // for(i=0;i<list.length;i++){
+    d3.select("head").data(js)
+        .enter().append('script')
+        .attr('src', function(d, i) {
+            name = "js/" + d + "?v=" + getRandomArbitrary(i);
+            return name;
+        });
+    // }
+    </script>
 </head>
+
 <body>
-
-<div class="row"></div>
-	<div id="container" class="container messaging-spacer col-md-2"></div>
-
-	<div id="menu"></div>
-
-	<div id="menu-overlay" class="animated col-md-8">
-		<div class="scrollable">
-			<div class="container">
-				<h1>Jordan Staniscia</h1>
-
-				<p>I’m a software designer originally from South Florida, now living in San Francisco, CA.</p>
-
-				<p>I’m currently a senior designer at <a href="http://instacart.com">Instacart</a>, that company you might already get your groceries from every week.</p>
-
-				<p>In my spare time, I build a comic book site called <a href="http://neuecomics.com">Neue Comics</a>.</p>
-
-				<p>In the past I worked at places like <a href="http://storify.com">Storify</a>, <a href="http://livefyre.com">Livefyre</a>, and <a href="http://heyzap.com">Heyzap</a>.</p>
-
-				<div><a href="http://twitter.com/jordanstaniscia" class="big-link">Follow me on Twitter</a></div>
-
-				<div><a href="http://instagram.com/jordanscamera" class="big-link">View my photos on Instagram</a></div>
-
-				<div><a href="mailto:jordangetsthisemail@gmail.com" class="big-link">Send me a note</a></div>
-
-				<div class="spacer"></div>
-			</div>
-		</div>
-	</div>
-
+    <div class="row"></div>
+    <div id="container" class="container messaging-spacer col-md-2"></div>
+    <div id="menu"></div>
+    <div id="menu-overlay" class="animated col-md-8">
+        <div class="scrollable">
+            <div class="container">
+                <h1>J.A.R.V.I.S</h1>
+                <p>I’m a software currently being designed in Texas.</p>
+                <p>After fully developed, I'm supposed to be a personal virtual assistant for Mr. Antriksh Agarwal.</p>
+                <p>Mr. Agarwal, as you might already know, is currently a Programmer Analyst at Sam's Club, Walmart, Inc. He would be very glad to have a chat with you.</a>.</p>
+                <p>In the past I worked at places like <a href="http://storify.com">Storify</a>, <a href="http://livefyre.com">Livefyre</a>, and <a href="http://heyzap.com">Heyzap</a>.</p>
+                <div><a href="http://twitter.com/jordanstaniscia" class="big-link">Follow me on Twitter</a></div>
+                <div>
+                    <a href="http://instagram.com/jordanscamera" class="big-link">View my photos on Instagram</a></div>
+                <div><a href="mailto:jordangetsthisemail@gmail.com" class="big-link">Send me a note</a></div>
+                <div class="spacer"></div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
