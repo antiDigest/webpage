@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Personal profile page for Antriksh Agarwal.">
+<meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
+<script src="https://use.fontawesome.com/5239e29d17.js"></script>
+<script src="js/index.js"></script>
+<script src="d3/d3.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<title>Antriksh Agarwal • Sam's Club, Walmart, Inc.</title>
+<script type="text/javascript">
+function getRandomArbitrary(i) {
+    return Math.random() * (i) + 1;
+}
+
+var css = ["", 'global.css', 'index.css']
+// for(i=0;i<list.length;i++){
+d3.select("head").data(css)
+    .enter().append('link')
+    .attr('rel', 'stylesheet')
+    .attr('href', function(d, i) {
+        console.log(d)
+        name = "css/" + d + "?v=" + getRandomArbitrary(i);
+        return name;
+    });
+
+var js = ["", 'index.js']
+// for(i=0;i<list.length;i++){
+d3.select("head").data(js)
+    .enter().append('script')
+    .attr('src', function(d, i) {
+        name = "js/" + d + "?v=" + getRandomArbitrary(i);
+        return name;
+    });
+// }
+</script>

@@ -2,68 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Personal profile page for Antriksh Agarwal. Contains profile information, academic work and projects done till now. Updated monthly.">
-    <meta name="keywords" content="Antriksh, Agarwal, Antriksh Agarwal, UTD, Master's, Masters, Student, Developer, Profile, Information">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500" rel="stylesheet" type="text/css">
-    <script src="https://use.fontawesome.com/5239e29d17.js"></script>
-    <script src="js/index.js"></script>
-    <script src="d3/d3.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <title>Antriksh Agarwal • Sam's Club, Walmart, Inc.</title>
-    <script type="text/javascript">
-    function getRandomArbitrary(i) {
-        return Math.random() * (i) + 1;
-    }
-
-    var css = ["", 'global.css', 'index.css']
-    // for(i=0;i<list.length;i++){
-    d3.select("head").data(css)
-        .enter().append('link')
-        .attr('rel', 'stylesheet')
-        .attr('href', function(d, i) {
-            console.log(d)
-            name = "css/" + d + "?v=" + getRandomArbitrary(i);
-            return name;
-        });
-
-    var js = ["", 'index.js']
-    // for(i=0;i<list.length;i++){
-    d3.select("head").data(js)
-        .enter().append('script')
-        .attr('src', function(d, i) {
-            name = "js/" + d + "?v=" + getRandomArbitrary(i);
-            return name;
-        });
-    // }
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+    jQuery(document).ready(function($) {
+        $("#head").load("_includes/head.html");
+        $("#header").load("_includes/header.html");
+        $("#footer").load("_includes/footer.html");
+    });
     </script>
+    <div id="head"></div>
 </head>
 
 <body>
+    <!-- <div id="header"></div> -->
     <div id="bg1">
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-inverse header-dark">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="https://samsclub.com/"> <img id ="logo" alt="samsclub logo" src="images/Wal-Mart Sams Logo.JPG"></a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li id="home-link" class="active"><a href="/">Home</a></li>
-                        <li id="about-link" title="Still work in progress"><a href="/chat.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <!-- BODY -->
         <div class="container text-center">
             <div class="row content">
@@ -363,23 +315,7 @@
         </div>
         <!-- END -->
     </div>
-    <div>
-        <div style="height: 30px; overflow: hidden; width: 100%;"></div>
-        <hr class="soft" style="width:100%;">
-        <div style="height: 30px; overflow: hidden; width: 100%;"></div>
-    </div>
-    <footer class="footer" style="height:45px; position:fixed">
-        <div class="container">
-            <p>Copyright &#169 2017 - The University of Texas at Dallas - Erik Jonsson School of Engineering & Computer Science - Department of Computer Science </p>
-            <p>
-                <a href="http://jigsaw.w3.org/css-validator/check/referer">
-					<img id="css-validator"
-						src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
-						alt="Valid CSS!" />
-					</a>
-            </p>
-        </div>
-    </footer>
+    <div id="footer"></div>
 </body>
 
 </html>

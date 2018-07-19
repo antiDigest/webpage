@@ -142,6 +142,39 @@ h2 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*.glyphicon:hover{
   display: block;
 }*/
@@ -778,14 +811,43 @@ hr.soft {
 }
 
 #bg1 {
-    background-image: url("../images/bg2.png");
+    background-image: url("../images/bg2.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: auto 100%;
+    background-size: 100%;
     width: auto 100%;
     font-family: BogleWeb, Helvetica Neue, Helvetica, Arial, sans-serif;
     color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    margin: 0 auto;
+    max-height: 600px;
+    /*max-width: 1000px;*/
     /*float: left;*/
+    position: relative;
+}
+
+#bg1 .container {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+}
+
+.footer {
+    height: 56px;
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.12);
+    position: relative;
+    /*z-index: 3;*/
+    bottom: 0;
+}
+
+.footer p {
+    text-align: center;
+    margin-top: 18px;
 }
 
 @media(min-width: 768px)
